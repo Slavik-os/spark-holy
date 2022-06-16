@@ -10,7 +10,9 @@
     <title>sparkle</title></head>
 <body>
 
-<div class="container mt-5">
+
+<!-- 
+ <div class="container mt-5">
 <select class="form-select"aria-label="Default select example">
 <option selected>Categories</option>
   <a href="#"> <option value="1">Bracelets</option></a>
@@ -129,10 +131,13 @@
     </li>
   </ul>
 
-</div>
-<style>.page-link  {text-decoration: none; color: black;}</style>
+</div> -->
 
-<footer class="bg mt-5 text-center" style="border-top: 1px solid #D8D8D8; padding: 5px 10px;">
+<div id="root_div"></div>
+
+<script src="products.js" type="text/javascript"></script>
+<style>.page-link  {text-decoration: none; color: black;}</style>
+<footer class="bg mt-5 text-center" style="border-top: 1px solid #D8D8D8; padding: 5px 10px; ">
 <div class="container p-4">
 <section class="mb-4">
 <a class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>

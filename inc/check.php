@@ -1,5 +1,6 @@
 <?php
 include "config.php";
+echo phpversion();
 $sign = mysqli_real_escape_string($mysqli,$_POST["SignIn"]);
 if(isset($sign)){
 	$firstName = mysqli_real_escape_string($mysqli,$_POST["firstName"]);
@@ -12,14 +13,14 @@ if(isset($sign)){
 	$result = mysqli_query($mysqli, $sql);
 	// Check is result set le grater then 0
 	if (mysqli_num_rows($result) > 0) {
-		header("location:../signup/index.php?error=Email exists , Chose an other one !");
+		// header("location:../signup/index.php?error=Email exists , Chose an other one !");
 	}else {
 		$sql = "
 		INSERT INTO user (firstName,lastName,adress,phoneNumber,email,pass) 
 			VALUES('$firstName','$lastName','$address','$phone','$email','$password')
 	";
 		$result = mysqli_query($mysqli, $sql);
-		header("location:../signup/index.php?success=Account is succesfully created!");
+		// header("location:../signup/index.php?success=Account is succesfully created!");
 	}
 
 	}
