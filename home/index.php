@@ -38,7 +38,7 @@
 <form class="form-inline my-2 my-lg-0 right-nav-items">
 <?php session_start(); if(isset($_SESSION['email'])){echo'<a href="#"><i class="fa-solid fa-magnifying-glass" data-toggle="modal" data-target="#exampleModalCenter"></i></a>';}?>
 <a href="../login/index.php"><i class="fa-regular fa-user"></i></a>
-<a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+<a href="http://localhost/nn/inc/bag_redirection.php"><i class="fa-solid fa-bag-shopping"></i></a>
 </form>
 </div>
 </nav>

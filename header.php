@@ -113,7 +113,7 @@
 		}
 	?>
 <a href="../login/index.php"><i class="fa-regular fa-user"></i></a>
-<a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+<a href="http://localhost/nn/inc/bag_redirection.php"><i class="fa-solid fa-bag-shopping"></i></a>
 </form>
 
 
@@ -130,6 +130,7 @@
     </div>
   </div>
 </div>
+</header>
 <!-- Nav End -->
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -47,6 +47,18 @@ outline: none;" name="password"/>
 <div class="pt-1 mb-5">
 <input class="btn btn-dark btn-lg btn-block" type="submit" value="Login" name="login">
 </div>
+<div class="pt-1 mb-5">
+  <?php
+    if(isset($_GET['error'])){
+      echo '
+      <div class="alert alert-danger" role="alert">
+      '.$_GET['error'].'
+    </div>
+      ';
+    }
+  ?>
+
+</div>
 <p class="mb-5 pb-lg-2 text-center" style="color: #393f81;"> Don't have an account? <a href="../signup/index.php"
 style="color:#A88719;">Register here!</a></p>
 </form>

@@ -1,8 +1,11 @@
 <?php
 include 'config.php';
-
+session_start();
 $login = mysqli_real_escape_string($mysqli,$_POST["login"]);
 if (isset($_POST["login"])){
+	// create the cart 
+	// $_SESSION['cart'] = new  ArrayObject;
+	$_SESSION['cart'] = [];
 
 	$email = mysqli_real_escape_string($mysqli,$_POST["email"]);
 	$password = md5(mysqli_real_escape_string($mysqli,$_POST["password"]));
@@ -17,7 +20,6 @@ if (isset($_POST["login"])){
 	  		$_SESSION['phone'] = $row['phoneNumber'];
 	  		$_SESSION['firstName'] = $row['firstName'];
 	  		$_SESSION['lastName'] = $row['lastName'];
-	  		
 		}
 		header("Location:../home/index.php");	
 
@@ -25,8 +27,6 @@ if (isset($_POST["login"])){
 		header("Location:../login/index.php?error=No record found , Check your username/password !");
 	}
 	$result = mysqli_query($mysqli, $sql);
-	
-
 }
 
 ?>

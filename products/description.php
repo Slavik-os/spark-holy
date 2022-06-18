@@ -30,6 +30,7 @@ include "../inc/config.php";
     if (mysqli_num_rows($resultAll) > 0) {
     session_start();
     while($row = mysqli_fetch_array($resultAll)){
+       $prod_id = $row["product_id"];
        $prod_name = $row['prodcut_name'];
        $description =  $row['productDescription'];
        $price = $row['price'];
@@ -37,6 +38,7 @@ include "../inc/config.php";
        $imgSrc = $row['imageSrc'];
     }
     $imgSrc = prepare_img($imgSrc);
+
   }
 ?>
   <div class="col">
@@ -52,15 +54,32 @@ include "../inc/config.php";
         
       </h5>
 
-<div class="col mt-5 quantity buttons_added">
-<input type="button" value="-" class="minus" onclick="sub(1)">
-<input type="number"step="1" min="1" max="<?php echo $stock;?>>" value="0" name="quantity" id="id_number" value="<?php echo $_SESSION["cart"][$key]->quantite ?>" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-<input type="button" value="+" class="plus" onclick="add(1,<?php echo $stock;?>)">
+<form action="../cart/add_to_cart.php" method="GET">
+  <div class="col mt-5 quantity buttons_added">
+  <input type="button" value="-" class="minus" onclick="sub(1)">
+  <input type="number"  step="1" min="1" max="<?php echo $stock;?>" value="0" name="quantity" id="id_number" value="" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+  <input type="button" value="+" class="plus" onclick="add(1,<?php echo $stock;?>)">
+  <input type="hidden" name="prod_id" value="<?php echo $prod_id;?>" id="prod_id">
+  <input type="hidden" id="hidden_value" name="data">
+  </div>
+  <input type="submit" class="col 2 btn btn-outline-dark mt-5" onclick="set_data()" value="ADD TO CART">
+  <?php 
+    if(isset($_GET['add'])){
+      echo '  <div class="alert alert-primary my-3" role="alert">
+                Item is added to cart
+            </div>';
+    }
+  ?>
 
-</div>
-<button type="button" class="col 2 btn btn-outline-dark mt-5">ADD TO CART </button>
+</form>
+<script type="text/javascript">
+  
+let set_data = ()=>{
+  document.getElementById('hidden_value').value = document.getElementById("id_number").value;
+  console.log(document.getElementById('id_number').value);
+}
 
-
+</script>
 </div>
 </div>
 </div>

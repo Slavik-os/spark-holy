@@ -9,13 +9,29 @@
     <link rel="stylesheet" type="text/css" href="main.css">
     <title>sparkle</title></head></head>
 <body>
-<div class="container text-center" style="padding-top : 250px;">
-<!-- Button trigger modal -->
+
+<?php
+error_reporting(0);
+include '../header.php';
+?>
+
+<div class="container" style="display: flex;margin-top:200px;width:100%;flex-direction: column; align-items: center;justify-content: center;">
+    <h1 class="my-4"><i class="fa-solid fa-face-frown" ></i></h1>
+    <h3 class="my-2">Your Shopping Cart is empty!</h3>
+    <p class="my-3">Don't miss out on great deals! <a href="#" style="color:#A88719">Start shopping!</a>  </p>
+
+</div>
+
+
+
+
+
+  <!--
+<div class="container text-center" style="padding-top : 250px;"> 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Launch demo modal
 </button>
 
-<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -36,6 +52,7 @@
   </div>
 </div>
 </div>
+-->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>

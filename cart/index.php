@@ -12,6 +12,16 @@
 </head>
 <body>
 
+<?php
+    error_reporting(0);
+    include '../header.php';
+?>
+
+<?php
+    session_start();
+    print_r($_SESSION['cart']);
+?>
+<div class="container-fluid" style="margin-top: 200px;width: 100%;">
 <div class="card">
 <div class="row">
 <div class="col-md-8 cart">
@@ -21,8 +31,13 @@
 <div class="col align-self-center text-right text-muted">3 items</div>
 </div>
 </div>    
-
-<div class="row border-top border-bottom">
+<div class="container-fluid" id="root">
+    <div class="cart">
+      
+    </div>
+</div>
+<!--
+ <div class="row border-top border-bottom">
 <div class="row main align-items-center">
 <div class="col-2"><img class="img-fluid" src="../necklace5.jpg"></div>
 <div class="col">
@@ -36,16 +51,16 @@
 </div>
 
 <div class="row">
-<div class="row main align-items-center">
-<div class="col-2"><img class="img-fluid" src="../earrings3.jpg"></div>
-<div class="col">
-<div class="row">Bold Small Hoops</div>
-</div>
-<div class="col">
-<a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-</div>
-<div class="col" style="color: #A18A68;">&dollar;  101 <span class="close">&#10005;</span></div>
-</div>
+    <div class="row main align-items-center">
+        <div class="col-2"><img class="img-fluid" src="../earrings3.jpg"></div>
+        <div class="col">
+            <div class="row">Bold Small Hoops</div>
+        </div>
+        <div class="col">
+            <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
+        </div>
+        <div class="col" style="color: #A18A68;">&dollar;  101 <span class="close">&#10005;</span></div>
+    </div>
 </div>
 
 <div class="row border-top border-bottom">
@@ -60,7 +75,7 @@
 </div>
 <div class="col" style="color: #A18A68;">&dollar;  125 <span class="close">&#10005;</span></div>
 </div>
-</div>
+</div> -->
 
 <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
 </div>
@@ -88,6 +103,7 @@
 </div>
 </div>
 </div>
-
+</div>
+<script src="draw_cart.js"></script>
 </body>
 </html>
